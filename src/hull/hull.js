@@ -139,7 +139,7 @@ function _concave(convex, maxSqEdgeLen, maxSearchArea, grid, edgeSkipList) {
             bBoxWidth = bBoxAround[2] - bBoxAround[0];
             bBoxHeight = bBoxAround[3] - bBoxAround[1];
 
-            midPoint = _midPoint(edge, grid.rangePoints(bBoxAround), convex);            
+            midPoint = _midPoint(edge, grid.rangePoints(bBoxAround), convex);
             scaleFactor++;
         }  while (midPoint === null && (maxSearchArea[0] > bBoxWidth || maxSearchArea[1] > bBoxHeight));
 
@@ -193,7 +193,7 @@ function hull(pointset, concavity, format) {
     concave = _concave(
         convex, Math.pow(maxEdgeLen, 2),
         maxSearchArea, grid(innerPoints, cellSize), {});
- 
+
     return formatUtil.fromXy(concave, format);
 }
 
